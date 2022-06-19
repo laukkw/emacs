@@ -103,7 +103,12 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; Constants
 
 (require 'init-const)
-
+(setq ns-use-native-fullscreen t
+      mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier nil
+      mac-use-title-bar nil)
 ;; Packages
 
 ;; Package Management
@@ -183,19 +188,19 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'init-company)
 
 ;; Programming
-(require 'init-java)
+;;;(require 'init-java)
 
 (require 'init-cc)
 
 (require 'init-python)
 
-(require 'init-haskell)
+;;(require 'init-haskell)
 
 (require 'init-ess)
 
-(require 'init-latex)
+;;;(require 'init-latex)
 
-(require 'init-buildsystem)
+;;;(require 'init-buildsystem)
 
 ;; Web Development
 (require 'init-webdev)
@@ -241,11 +246,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
   (load-file (expand-file-name "init-private.el" user-emacs-directory)))
 ;; -InitPrivate
 
-(use-package benchmark-init
-  :init
-  (benchmark-init/activate)
-  :hook
-  (after-init . benchmark-init/deactivate))
+
 
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

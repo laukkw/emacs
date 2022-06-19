@@ -34,7 +34,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
+(use-package org-download
+:ensure t
+)
 ;; OrgPac
 (use-package org
   :ensure nil
