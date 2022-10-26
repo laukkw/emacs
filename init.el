@@ -237,8 +237,6 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-zone)
 
-;;;(require 'init-solidity)
-;;(require 'init-golang)
 ;; my config
 (require 'init-multiple)
 ;;;(require 'init-all-the-icons)
@@ -270,3 +268,4 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)
