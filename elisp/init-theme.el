@@ -39,7 +39,7 @@
 (eval-when-compile
   (require 'init-const))
 
-;; DoomThemes
+;;;DoomThemes
 (use-package doom-themes
   :custom-face
   (cursor ((t (:background "BlanchedAlmond"))))
@@ -56,7 +56,7 @@
     (call-interactively #'load-theme)))
 ;; -DoomThemes
 
-;; DoomModeline
+;;;DoomModeline
 (use-package doom-modeline
   :custom
   ;; Don't compact font caches during GC. Windows Laggy Issue
@@ -64,7 +64,7 @@
   (doom-modeline-minor-modes t)
   (doom-modeline-icon t)
   (doom-modeline-major-mode-color-icon t)
-  (doom-modeline-height 15)
+  (doom-modeline-height 13)
   :config
   (doom-modeline-mode))
 ;; -DoomModeline

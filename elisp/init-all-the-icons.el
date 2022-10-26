@@ -10,7 +10,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 1
+;;     Update #: 8
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -50,7 +50,6 @@
 (require 'cl-lib)
 (require 'dired)
 (require 'all-the-icons)
-
 (defface all-the-icons-dired-dir-face
   '((((background dark)) :foreground "white")
     (((background light)) :foreground "black"))

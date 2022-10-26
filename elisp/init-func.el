@@ -73,17 +73,17 @@
 (global-set-key (kbd "M-W -") (lambda () (interactive) (resize-window t -5)))
 (global-set-key (kbd "M-W M-_") (lambda () (interactive) (resize-window t -5)))
 
-(global-set-key (kbd "M-H =") (lambda () (interactive) (resize-window nil 5)))
-(global-set-key (kbd "M-H M-+") (lambda () (interactive) (resize-window nil 5)))
-(global-set-key (kbd "M-H -") (lambda () (interactive) (resize-window nil -5)))
-(global-set-key (kbd "M-H M-_") (lambda () (interactive) (resize-window nil -5)))
+;;;(global-set-key (kbd "M-H =") (lambda () (interactive) (resize-window nil 5)))
+;;;(global-set-key (kbd "M-H M-+") (lambda () (interactive) (resize-window nil 5)))
+;;;(global-set-key (kbd "M-H -") (lambda () (interactive) (resize-window nil -5)))
+;;;(global-set-key (kbd "M-H M-_") (lambda () (interactive) (resize-window nil -5)))
 ;; -ResizeWidthheight
 
-;; EditConfig
+;; EditConfig . 直接打开 init.el 
 (defun edit-configs ()
   "Opens the README.org file."
   (interactive)
-  (find-file "~/.emacs.d/init.org"))
+  (find-file "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "C-z e") #'edit-configs)
 ;; -EditConfig

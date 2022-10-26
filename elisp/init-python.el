@@ -36,7 +36,6 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'init-syntax)
   (require 'init-const))
 
 ;; PythonConfig

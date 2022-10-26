@@ -1,0 +1,108 @@
+#+TITLE:     手册
+#+AUTHOR:    rzry https://github.com/rzry
+#+EMAIL:     rzry36008@ccie.lol
+#+DATE:      2022-10-26
+#+LANGUAGE:  en
+
+
+* 快捷键回忆
+
+1. 将两行换到一行
+#+begin_src elisp
+C x  C l
+(global-set-key (kbd "C-x C-l") #'toggle-truncate-lines)
+#+end_src
+2. 像浏览器那样切换屏幕大小
+#+begin_src elisp
+C +   C -  c =
+(global-set-key (kbd "C-=") #'text-scale-increase)
+(global-set-key (kbd "C-+") #'text-scale-increase)
+(global-set-key (kbd "C--") #'text-scale-decrease)
+#+end_src
+3. 重置当前window 的大小占比.
+#+begin_src elisp
+C z w 输入 1 ,就会变成 10% 大小
+(global-set-key (kbd "C-z w") #'resize-window-width)
+(global-set-key (kbd "C-z h") #'resize-window-height)
+#+end_src
+
+4. 直接打开 init.el
+#+begin_src elisp
+(defun edit-configs ()
+  "Opens the README.org file."
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
+(global-set-key (kbd "C-z e") #'edit-configs)
+#+end_src
+
+5. ivy swiper 搜索,搜索buffer,以及所有字符
+#+begin_src
+  C z b  搜索 buffer
+  C z C b 搜索打开的buffer
+  C z s  启动 counsel-rg
+  C M s  启动 color-rg 搜索
+#+end_src
+6. 搜索文件 fd
+#+begin_src
+C z p 搜索所有文件
+#+end_src
+
+
+7. 两个窗口换位置
+#+begin_src
+C x 4 t
+#+end_src
+
+
+8. 删除所有的buffer
+#+begin_src
+C x K
+#+end_src
+
+9. avy 跳转 搜索跳转到字符或者行
+#+begin_src
+跳到任意字符 C z c
+跳到任意行  C z l
+#+end_src
+
+
+10. emacs的剪贴板历史
+#+begin_src
+M y  展示剪贴板历史
+#+end_src
+
+
+11. 查看当前模式的快捷键帮助
+#+begin_src
+
+  C h C m
+#+end_src
+
+12. 在 dired.el 里面 save All buffer
+#+begin_src
+
+#+end_src
+
+13. 打开buffer 像文件管理一样
+#+begin_src
+C x C b
+#+end_src
+
+14. 打开项目的侧边栏
+#+begin_src
+M - 0
+#+end_src
+
+
+15. 快捷 format
+#+begin_src
+C c C f
+#+end_src
+
+
+16. 快捷注释
+#+begin_src
+C c M ;
+M ;
+#+end_src

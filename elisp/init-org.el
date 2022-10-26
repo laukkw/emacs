@@ -105,6 +105,8 @@
    '(;; other Babel languages
      (plantuml . t))))
 ;; -PlantUMLPac
+;;;export
+(setq org-html-head "<link rel='stylesheet' type='text/css' href='https://rgb-24bit.github.io/org-html-theme-list/org-guidao/style/main.css'>")
 
 (provide 'init-org)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

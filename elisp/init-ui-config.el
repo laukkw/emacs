@@ -54,7 +54,7 @@
 ;; -PreSym
 
 ;; TitleBar
-(setq-default frame-title-format '("EMACS - " user-login-name "@" system-name " - %b"))
+(setq-default frame-title-format '("你该对世界有点意见"))
 ;; -TitleBar
 
 ;; YorN

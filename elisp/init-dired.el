@@ -81,8 +81,9 @@
   "Instead of `save-buffer', save all opened buffers by calling `save-some-buffers' with ARG t."
   (interactive)
   (save-some-buffers t))
-(global-set-key (kbd "C-x C-s") nil)
-(global-set-key (kbd "C-x C-s") #'save-all-buffers)
+;;(global-set-key (kbd "C-x C-s") nil)
+;;(global-set-key (kbd "C-x C-s") #'save-all-buffers)
+
 ;; -SaveAllBuffers
 
 (provide 'init-dired)

@@ -100,6 +100,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (update-to-load-path (expand-file-name "elisp" user-emacs-directory))
 ;; -LoadPath
 
+(setq backup-directory-alist (quote (("." . "~/.emacs-backups"))))
 ;; Constants
 
 (require 'init-const)
@@ -111,6 +112,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 ;; Global Functionalities
 (require 'init-global-config)
+
 ;;windows
 (require 'init-func)
 ;;;rg viper
@@ -126,13 +128,13 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;;; kill ring copy
 (require 'init-popup-kill-ring)
 ;;; undo view C x u
-(require 'init-undo-tree)
+;;;(require 'init-undo-tree)
 ;;; view key map major mode
 (require 'init-discover-my-major)
 ;;; windoew copy swap jump
 (require 'init-ace-window)
 ;;;
-;;(require 'init-shell)
+(require 'init-shell)
 ;;;direct
 (require 'init-dired)
 ;;; buffer setting
@@ -158,15 +160,15 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; yas
 (require 'init-yasnippet)
 ;; flycheck
-(require 'init-syntax)
+;;;(require 'init-syntax)
 ;;; jump to definition
-(require 'init-dumb-jump)
+;;;(require 'init-dumb-jump)
 
-(require 'init-parens)
+;;;(require 'init-parens)
 ;;; 缩进
 (require 'init-indent)
 ;; 运行
-(require 'init-quickrun)
+;;;(require 'init-quickrun)
 ;; 格式化 C c C f
 (require 'init-format)
 ;; 快捷注释
@@ -178,24 +180,28 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'init-ein)
 
-(require 'init-lsp)
+;;;(require 'init-lsp)
 
+;;;
 (require 'init-company)
 
-;; Programming
-(require 'init-java)
+(require 'init-lspbridge)
 
-(require 'init-cc)
+
+;; Programming
+;;;(require 'init-java)
+
+;;;(require 'init-cc)
 
 (require 'init-python)
 
-(require 'init-haskell)
+;;;(require 'init-haskell)
 
-(require 'init-ess)
+;;(require 'init-ess)
 
-(require 'init-latex)
+;;(require 'init-latex)
 
-(require 'init-buildsystem)
+;;(require 'init-buildsystem)
 
 ;; Web Development
 (require 'init-webdev)
@@ -208,29 +214,31 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; Internet
 (require 'init-eaf)
 
-(require 'init-erc)
+;;;(require 'init-erc)
 
 ;;(require 'init-mu4e)
 
-(require 'init-tramp)
+;;;(require 'init-tramp)
 
-(require 'init-leetcode)
+;;(require 'init-leetcode)
 
 (require 'init-debbugs)
 
-(require 'init-hackernews)
+;;;(require 'init-hackernews)
 
 ;;(require 'init-eww)
 
 ;; Miscellaneous
-(require 'init-chinese)
+;;(require 'init-chinese)
 
-(require 'init-games)
+;;;(require 'init-games)
 
 (require 'init-epaint)
 
 (require 'init-zone)
 
+;;;(require 'init-solidity)
+;;(require 'init-golang)
 ;; my config
 (require 'init-multiple)
 ;;;(require 'init-all-the-icons)
@@ -239,12 +247,25 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (when (file-exists-p (expand-file-name "init-private.el" user-emacs-directory))
   (load-file (expand-file-name "init-private.el" user-emacs-directory)))
 ;; -InitPrivate
+;;(require 'init-trans)
 
+;;;(use-package trans-mode
+;;;  :straight
+;;;  ;;;(:host github :repo "Imymirror/trans-mode")
+;;;  :custom
+;;;  (trans-target "zh" "first target language is zh")
+;;;  (trans-second-target "en" "if source text language code equals first target, use the second target as an alternative.")
+;;;  :config
+;;;  (trans-install-target "ja") ;; ==> auto generate two new functions : trans-input-ja , trans-input-ja-popup
+;;;  )
+(use-package ox-gfm)
+;;;(require 'init-tg)
 (use-package benchmark-init
   :init
   (benchmark-init/activate)
   :hook
   (after-init . benchmark-init/deactivate))
+
 
 (provide 'init)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

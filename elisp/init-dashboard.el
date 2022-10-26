@@ -39,7 +39,7 @@
 (use-package dashboard
   :demand
   :diminish (dashboard-mode page-break-lines-mode)
-  :bind
+ :bind
   (("C-z d" . open-dashboard)
    :map dashboard-mode-map
    (("n" . dashboard-next-line)

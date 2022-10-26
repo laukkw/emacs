@@ -35,47 +35,30 @@
 ;;
 ;;; Code:
 
-(eval-when-compile
-  (require 'init-const))
-
-;; EAFPac
-(use-package eaf
-  :load-path (lambda () (expand-file-name "site-elisp/emacs-application-framework" user-emacs-directory))
-  :if eaf-env-p
-  :init
-  (use-package epc :defer t)
-  (use-package ctable :defer t)
-  (use-package deferred :defer t)
-  :custom
-  (browse-url-browser-function #'eaf-open-browser) ;; Make EAF Browser my default browser
-  (eaf-browser-continue-where-left-off t)
-  :config
-  (require 'eaf-org)
-  (when (display-graphic-p)
-    (require 'eaf-all-the-icons))
-  (defalias 'browse-web #'eaf-open-browser)
-  (eaf-bind-key nil "M-q" eaf-browser-keybinding)
-  (eaf-bind-key open_link "C-M-s" eaf-browser-keybinding)
-  (eaf-bind-key open_devtools "M-i" eaf-browser-keybinding)
-  (eaf-bind-key insert_or_recover_prev_close_page "X" eaf-browser-keybinding)
-  (eaf-bind-key scroll_up "RET" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_down_page "DEL" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_down_page "u" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_up_page "d" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_to_end "M->" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_to_begin "M-<" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key quit-window "q" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key zoom_in "C-=" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key zoom_out "C--" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key take_photo "p" eaf-camera-keybinding)
-  (eaf-bind-key eaf-send-key-sequence "M-]" eaf-terminal-keybinding)
-  (eaf-setq eaf-browser-default-zoom "1.25")
-  (eaf-setq eaf-browser-dark-mode "true")
-  (eaf-setq eaf-browser-enable-adblocker "true")
-  (eaf-setq eaf-pdf-dark-mode "false")
-  (eaf-setq eaf-browser-enable-autofill "true"))
-;; -EAFPac
-
+(add-to-list 'load-path "~/.emacs.d/elisp/emacs-application-framework/")
+(require 'eaf)
+(require 'eaf-browser)
+(require 'eaf-org-previewer)
+(require 'eaf-airshare)
+(require 'eaf-system-monitor)
+(require 'eaf-image-viewer)
+(require 'eaf-file-manager)
+(require 'eaf-pdf-viewer)
+(require 'eaf-markdown-previewer)
+(require 'eaf-file-manager)
+(require 'eaf-music-player)
+(require 'eaf-jupyter)
+(require 'eaf-rss-reader)
+(require 'eaf-git)
+(require 'eaf-camera)
+(require 'eaf-mindmap)
+(require 'eaf-demo)
+(require 'eaf-netease-cloud-music)
+;;;(require 'eaf-mermaid)
+(require 'eaf-video-player)
+(require 'eaf-file-browser)
+(require 'eaf-terminal)
+(require 'eaf-file-sender)
 
 (provide 'init-eaf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

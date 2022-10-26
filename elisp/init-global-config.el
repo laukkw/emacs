@@ -50,15 +50,15 @@
 (global-set-key (kbd "M-m") nil)
 (global-set-key (kbd "C-x C-z") nil)
 (global-set-key (kbd "M-/") nil)
-;; Truncate lines
+;; Truncate lines -- 开启自动长换行
 (global-set-key (kbd "C-x C-l") #'toggle-truncate-lines)
 ;; Adjust font size like web browsers
 (global-set-key (kbd "C-=") #'text-scale-increase)
 (global-set-key (kbd "C-+") #'text-scale-increase)
 (global-set-key (kbd "C--") #'text-scale-decrease)
 ;; Move up/down paragraph
-(global-set-key (kbd "M-n") #'forward-paragraph)
-(global-set-key (kbd "M-p") #'backward-paragraph)
+;;;(global-set-key (kbd "M-n") #'forward-paragraph)
+;;;(global-set-key (kbd "M-p") #'backward-paragraph)
 ;; -DefBindings
 
 ;; UTF8Coding
